@@ -24,6 +24,7 @@ namespace piWebAPI0.Controllers
         // get config values from web.config 
         // these will allow me to change the behavior of the sms portion of the app by hitting 
         // the debugconsole
+        // https://APPNAME.scm.azurewebsites.net/debugconsole
         public bool smsOn
         {
             get
@@ -106,7 +107,7 @@ namespace piWebAPI0.Controllers
 
         public void sendSMS(decimal fTemp)
         {
-            var smsApi = SinchFactory.CreateApiFactory("d9dec293-0872-4357-91e9-fae9e8868ffe", "YTNXHvXQLUiwjpe68vPEqQ==").CreateSmsApi();
+            var smsApi = SinchFactory.CreateApiFactory("XXXXXXXX", "XXXXXXXX").CreateSmsApi();
             var sendSmsResponse = smsApi.Sms(phoneNumber, string.Format("Temp is {0}", fTemp)).Send();
         }
     }
