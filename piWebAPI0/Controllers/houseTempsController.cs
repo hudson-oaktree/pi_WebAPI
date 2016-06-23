@@ -107,7 +107,11 @@ namespace piWebAPI0.Controllers
 
         public void sendSMS(decimal fTemp)
         {
+<<<<<<< HEAD
             var smsApi = SinchFactory.CreateApiFactory("XXXXXXXX", "XXXXXXXX").CreateSmsApi();
+=======
+            var smsApi = SinchFactory.CreateApiFactory("XXX", "XXXXX").CreateSmsApi();
+>>>>>>> 12b77e34ea2c239c84a987f292481b84c3b5ef98
             var sendSmsResponse = smsApi.Sms(phoneNumber, string.Format("Temp is {0}", fTemp)).Send();
         }
     }
